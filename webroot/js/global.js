@@ -4,8 +4,6 @@
 
 $(document).ready(function(){
 
-     $('[data-toggle="tooltip"]').tooltip();
-
     var select = $(".component-list"),
         options_area = $(".options-list"),
         option = $(".option"),
