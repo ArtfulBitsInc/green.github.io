@@ -11,7 +11,7 @@ $(document).ready(function(){
         $(".max").numeric();
 
     var filter_1 = $("#filter-1"),
-        f1_max = 1000000,
+        f1_max = 2000000,
         f1_w1 = 0,
         f1_w2 = 450000,
         f1_step = 10000,
@@ -56,7 +56,7 @@ $(document).ready(function(){
         var w1 = parseInt($(this).val());
         var w2 = parseInt($(this).parent().find(".max").val());
 
-        if (w1 < 0) {
+        if (w1 < 0 || $(this).val().length == 0) {
             w1 = parseInt(0);
             $(this).val(w1);
         }
@@ -114,6 +114,11 @@ $(document).ready(function(){
         w2 = parseInt($(this).val());
         w1 = parseInt($(this).parent().find(".min").val());
 
+        if ($(this).val().length == 0) {
+            w2 = parseInt(0);
+            $(this).val(w2);
+        }
+
         if (w2 <= w1) {
             switch (filter_id) {
                 case 'filter-1':
@@ -156,21 +161,21 @@ $(document).ready(function(){
             case 'filter-1':
                 if (w2 > f1_max) {
                     w2 = f1_max;
-                    $(this).val(w2);
+                    //$(this).val(w2);
                 }
                 range_slider('#slider-1',0,f1_max,w1,w2);
                 break;
             case 'filter-2':
                 if (w2 > f2_max) {
                     w2 = f2_max;
-                    $(this).val(w2);
+                   //$(this).val(w2);
                 }
                 range_slider('#slider-2',0,f2_max,w1,w2);
                 break;
             case 'filter-3':
                 if (w2 > f3_max) {
                     w2 = f3_max;
-                    $(this).val(w2);
+                    //$(this).val(w2);
                 }
                 range_slider('#slider-3',0,f3_max,w1,w2);
                 break;
