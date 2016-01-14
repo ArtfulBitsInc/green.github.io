@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green-Acres | Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="../webroot/js/global.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -17,7 +18,7 @@
         <section class="container-fluid">
             <div class="header-row row">
                 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
-                    <h1 class="logo"><img src="../webroot/img/logo.png"><span>.com</span></h1>
+                    <h1 class="logo"><a href="/ru"><img src="../webroot/img/logo.png"><span class="logo-part-large">Green-Acres</span><span class="logo-part-small">.com</span></a></h1>
                 </div>
                 <nav class="col-xs-12 col-sm-7 col-md-7 col-lg-8 text-right">
                     <button class="btn-personal-area"><span class="icons-sprite"></span>Войти</button>
@@ -25,8 +26,8 @@
                     <div class="component-list">
                         <button class="btn-language">Язык<span class="icons-sprite"></span></button>
                         <div class="options-list">
-                            <p class="option"><a href="../">EN</a></p>
-                            <p class="option"><a href="../ru/">RU</a></p>
+                            <p class="option"><a href="../"></a>EN</p>
+                            <p class="option"><a href="../ru/"></a>RU</p>
                             <p class="option">FR</p>
                         </div>
                     </div>
@@ -65,11 +66,15 @@
                 </div>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 search-line">
                     <div class="search-line-component component-location">
-                        <span class="icons-sprite icon-location"></span>
+                        <span class="icons-sprite icon-location">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Местность"></a>
+                        </span>
                         <input type="text" class="search-par" placeholder="Местность">
                     </div>
                     <div class="search-line-component component-apartment component-list">
-                        <span class="icons-sprite icon-apartment"></span>
+                        <span class="icons-sprite icon-apartment">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Тип недвижимости"></a>
+                        </span>
                         <p class="search-par component-selected">Апартамент,Дом/Вилла1</p>
                         <div class="options-list">
                             <p class="option">Апартамент,Дом/Вилла1</p>
@@ -79,10 +84,88 @@
                         <span class="icons-sprite icon-list"></span>
                     </div>
                     <div class="search-line-component component-budget">
-                        <span class="icons-sprite icon-budget">Бюджет</span>
-                        <input type="text" class="search-par" placeholder="Мин">
+                        <span class="icons-sprite icon-budget">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Budget"></a>Бюджет
+                        </span>
+                        <!--<input type="text" class="search-par" placeholder="Min">-->
+                        <div class="component-list search-par ">
+                            <p class="component-selected">Мин</p>
+                            <div class="options-list">
+                                <p class="option">Мин</p>
+                                <p class="option">10 000</p>
+                                <p class="option">25 000</p>
+                                <p class="option">50 000</p>
+                                <p class="option">75 000</p>
+                                <p class="option">100 000</p>
+                                <p class="option">125 000</p>
+                                <p class="option">150 000</p>
+                                <p class="option">175 000</p>
+                                <p class="option">200 000</p>
+                                <p class="option">225 000</p>
+                                <p class="option">250 000</p>
+                                <p class="option">275 000</p>
+                                <p class="option">300 000</p>
+                                <p class="option">325 000</p>
+                                <p class="option">350 000</p>
+                                <p class="option">400 000</p>
+                                <p class="option">450 000</p>
+                                <p class="option">500 000</p>
+                                <p class="option">550 000</p>
+                                <p class="option">600 000</p>
+                                <p class="option">650 000</p>
+                                <p class="option">700 000</p>
+                                <p class="option">800 000</p>
+                                <p class="option">900 000</p>
+                                <p class="option">1 000 000</p>
+                                <p class="option">1 100 000</p>
+                                <p class="option">1 200 000</p>
+                                <p class="option">1 300 000</p>
+                                <p class="option">1 400 000</p>
+                                <p class="option">1 500 000</p>
+                                <p class="option">2 000 000</p>
+                            </div>
+                            <span class="icons-sprite icon-dropdown"></span>
+                        </div>
                         <span class="icons-sprite icon-budget-arrow"></span>
-                        <input type="text" class="search-par" placeholder="Макс">
+                        <div class="component-list search-par">
+                            <p class="component-selected">Макс</p>
+                            <div class="options-list">
+                                <p class="option">Макс</p>
+                                <p class="option">10 000</p>
+                                <p class="option">25 000</p>
+                                <p class="option">50 000</p>
+                                <p class="option">75 000</p>
+                                <p class="option">100 000</p>
+                                <p class="option">125 000</p>
+                                <p class="option">150 000</p>
+                                <p class="option">175 000</p>
+                                <p class="option">200 000</p>
+                                <p class="option">225 000</p>
+                                <p class="option">250 000</p>
+                                <p class="option">275 000</p>
+                                <p class="option">300 000</p>
+                                <p class="option">325 000</p>
+                                <p class="option">350 000</p>
+                                <p class="option">400 000</p>
+                                <p class="option">450 000</p>
+                                <p class="option">500 000</p>
+                                <p class="option">550 000</p>
+                                <p class="option">600 000</p>
+                                <p class="option">650 000</p>
+                                <p class="option">700 000</p>
+                                <p class="option">800 000</p>
+                                <p class="option">900 000</p>
+                                <p class="option">1 000 000</p>
+                                <p class="option">1 100 000</p>
+                                <p class="option">1 200 000</p>
+                                <p class="option">1 300 000</p>
+                                <p class="option">1 400 000</p>
+                                <p class="option">1 500 000</p>
+                                <p class="option">2 000 000</p>
+                            </div>
+                            <span class="icons-sprite icon-dropdown"></span>
+                        </div>
+                        <!--<input type="text" class="search-par" placeholder="Max">-->
                     </div>
                     <div class="search-line-component component-currency component-list">
                         <p class="search-par component-selected">EUR</p>
@@ -121,83 +204,89 @@
                         <div class="slide-content">
                             <div class="left-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-1.jpg">
-                                        <p class="item-price">&euro; 371,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-1.jpg">
+                                            <p class="item-price">&euro; 371,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Престижное жилье</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Ламот-Монравель</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-1.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>120m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>2320m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>2</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Престижное жилье</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Ламот-Монравель</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-1.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>120m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>2320m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>2</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                             <div class="center-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-2.jpg">
-                                        <p class="item-price">&euro; 689,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-2.jpg">
+                                            <p class="item-price">&euro; 689,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Замок с виноградником</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Сен-Макер-дю-Буа</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-2.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>160m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>1210m<span class="sub">8</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>8</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>4</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Замок с виноградником</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Сен-Макер-дю-Буа</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-2.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>160m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>1210m<span class="sub">8</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>8</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>4</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                             <div class="right-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-3.jpg">
-                                        <p class="item-price">&euro; 1,055,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-3.jpg">
+                                            <p class="item-price">&euro; 1,055,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Престижное жилье</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Бержерак</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-3.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>180m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>750m<span class="sub">8</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>3</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Престижное жилье</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Бержерак</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-3.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>180m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>750m<span class="sub">8</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>3</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                         </div>
@@ -207,83 +296,89 @@
                         <div class="slide-content">
                             <div class="left-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-1.jpg">
-                                        <p class="item-price">&euro; 371,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-1.jpg">
+                                            <p class="item-price">&euro; 371,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Престижное жилье</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Ламот-Монравель</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-1.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>120m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>2320m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>2</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Престижное жилье</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Ламот-Монравель</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-1.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>120m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>2320m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>2</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                             <div class="center-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-2.jpg">
-                                        <p class="item-price">&euro; 689,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-2.jpg">
+                                            <p class="item-price">&euro; 689,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Замок с виноградником</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Сен-Макер-дю-Буа</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-2.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>160m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>1210m<span class="sub">8</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>8</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>4</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Замок с виноградником</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Сен-Макер-дю-Буа</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-2.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>160m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>1210m<span class="sub">8</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>8</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>4</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                             <div class="right-slide">
                                 <figure class="item-main">
-                                    <div class="photo-area">
-                                        <img class="item-img" src="../webroot/img/item-img-3.jpg">
-                                        <p class="item-price">&euro; 1,055,000</p>
-                                        <div class="item-favourite">
-                                            <span class="icons-sprite icon-favourite"></span>
+                                    <a href="advert/">
+                                        <div class="photo-area">
+                                            <img class="item-img" src="../webroot/img/item-img-3.jpg">
+                                            <p class="item-price">&euro; 1,055,000</p>
+                                            <div class="item-favourite">
+                                                <span class="icons-sprite icon-favourite"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <figcaption class="descr-area">
-                                        <h3 class="item-title">Престижное жилье</h3>
-                                        <p class="item-location"><span class="icons-sprite icon-item-location"></span>Бержерак</p>
-                                        <div class="item-photo-area">
-                                            <img class="item-photo" src="../webroot/img/item-photo-3.png">
-                                        </div>
-                                        <hr class="item-divider">
-                                        <div class="item-details">
-                                            <ul>
-                                                <li class="details-component"><span class="icons-sprite icon-house-square"></span>180m<span class="sub">2</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-territory-square"></span>750m<span class="sub">8</span></li>
-                                                <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
-                                                <li class="details-component"><span class="icons-sprite icon-bedroom"></span>3</li>
-                                            </ul>
-                                        </div>
-                                    </figcaption>
+                                        <figcaption class="descr-area">
+                                            <h3 class="item-title">Престижное жилье</h3>
+                                            <p class="item-location"><span class="icons-sprite icon-item-location"></span>Бержерак</p>
+                                            <div class="item-photo-area">
+                                                <img class="item-photo" src="../webroot/img/item-photo-3.png">
+                                            </div>
+                                            <hr class="item-divider">
+                                            <div class="item-details">
+                                                <ul>
+                                                    <li class="details-component"><span class="icons-sprite icon-house-square"></span>180m<span class="sub">2</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-territory-square"></span>750m<span class="sub">8</span></li>
+                                                    <li class="details-component"><span class="icons-sprite icon-room"></span>6</li>
+                                                    <li class="details-component"><span class="icons-sprite icon-bedroom"></span>3</li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </a>
                                 </figure>
                             </div>
                         </div>
@@ -326,11 +421,11 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabs-area">
                     <ul class="property-tabs">
-                        <a data-toggle="pill" href="#id1" class="prop-tab"><li>Недвижимость в<br><span>Нормандии</span></li></a>
-                        <a data-toggle="pill" href="#id2" class="prop-tab active-tab"><li>Недвижимость в<br><span>Британии</span></li></a>
-                        <a data-toggle="pill" href="#id3" class="prop-tab"><li>Недвижимость на<br><span>Лазурном Берегу</span></li></a>
-                        <a data-toggle="pill" href="#id4" class="prop-tab"><li>Недвижимость в<br><span>Лангедоке</span></li></a>
-                        <a data-toggle="pill" href="#id5" class="prop-tab"><li>Недвижимость в<br><span>Долине Луары</span></li></a>
+                        <div data-toggle="pill" href="#id1" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 prop-tab"><li>Недвижимость в<br><span>Нормандии</span></li></div>
+                        <div data-toggle="pill" href="#id2" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 prop-tab active-tab"><li>Недвижимость в<br><span>Британии</span></li></div>
+                        <div data-toggle="pill" href="#id3" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 prop-tab"><li>Недвижимость на<br><span>Лазурном Берегу</span></li></div>
+                        <div data-toggle="pill" href="#id4" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 prop-tab"><li>Недвижимость в<br><span>Лангедоке</span></li></div>
+                        <div data-toggle="pill" href="#id5" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 prop-tab"><li>Недвижимость в<br><span>Долине Луары</span></li></div>
                     </ul>
                 </div>
                 <div class="tab-content prop-tabs-content">

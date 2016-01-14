@@ -3,6 +3,9 @@
  */
 
 $(document).ready(function(){
+
+     $('[data-toggle="tooltip"]').tooltip();
+
     var select = $(".component-list"),
         options_area = $(".options-list"),
         option = $(".option"),
@@ -26,7 +29,7 @@ $(document).ready(function(){
 
     option_sort_list.on("click",function(){
         console.log("I`m here");
-        $(this).find("span").clone().appendTo(".component-selected")
+        $(this).find("span").clone().appendTo(".component-selected");
     });
 
     add_to_favourite.on("click",function(){
@@ -41,6 +44,14 @@ $(document).ready(function(){
         $(this).find(".details-tip").hide();
     });
 
+
+    $(".item-show-info").on("click",function(){
+        var txt = $(this).parent().parent().find(".item-more-info").is(':visible')? '[+]' : '[-]';
+        $(this).text(txt);
+        $(this).parent().parent().parent().parent().toggleClass("item-open");
+        $(this).parent().parent().find(".item-more-info").slideToggle(150);
+    });
+
     $(window).on("click touchend", function (e) {
 
         var target = $(e.target);
@@ -49,6 +60,19 @@ $(document).ready(function(){
             e.stopPropagation();
         } else {
             options_area.removeClass("show-list");
+        }
+
+        if ($(e.target).closest($(".item-main a")).length) {
+            if ($(e.target).closest($(".item-favourite")).length) {
+                console.log(e.target);
+                e.stopPropagation();
+                return false;
+            }
+            if ($(e.target).closest($(".item-show-info")).length) {
+                console.log(e.target);
+                e.stopPropagation();
+                return false;
+            }
         }
 
     });
@@ -83,6 +107,74 @@ $(document).ready(function(){
             $(this).html("See all photos");
         }
 
+    });
+
+    $(function() {
+        var availableTags = [
+            "Paris",
+            "Paris Salles",
+            "Paris Seillons-Source-d'Argens",
+            "Paris 17 Paris",
+            "Villa Girondine",
+            "Chateau",
+            "Paris",
+            "Stunning Chartreuse",
+            "Stunning",
+            "Girodine House",
+            "House",
+            "La Villa",
+            "Villa Paris",
+            "Dordone",
+            "France",
+            "Dordone France"
+        ];
+        $( "#search" ).autocomplete({
+            source: availableTags
+        });
+    });
+
+    /***************** Filter - Property Type ****************/
+
+        $(".btn-filter").on("click",function(){
+            $(this).toggleClass("btn-filter-close");
+            $(".more-filters").slideToggle(150);
+        });
+
+    var filter_prop_btn = $(".filter-properties-list li input[type=checkbox]"),
+        filter_prop_text = $(".prop-name"),
+        filter_type_text = $(".filter-property-type"),
+        filter_hover = $(".filter-properties-area"),
+        counter = 0;
+
+    filter_hover.on("mouseover",function(){
+        $(".filter-properties-list").show();
+    });
+
+    filter_hover.on("mouseleave",function(){
+        $(".filter-properties-list").hide();
+    });
+
+    filter_prop_btn.on("click",function(){
+        if($(this).is(":checked")) {
+            counter++;
+            console.log(counter);
+            if(counter > 1) {
+                filter_type_text.val( filter_type_text.val() + ", " + $(this).parent().find(filter_prop_text).text());
+            } else {
+                filter_type_text.val($(this).parent().find(filter_prop_text).text());
+            }
+        } else {
+            counter--;
+            console.log(counter);
+            var str = filter_type_text.val();
+            str = str.replace(", " + $(this).parent().find(filter_prop_text).text(), "");
+            str = str.replace( $(this).parent().find(filter_prop_text).text() + ", " , "");
+            if(counter < 1) {
+                filter_type_text.val("All Types");
+            } else {
+                filter_type_text.val(str);
+            }
+        }
     });
 
 });

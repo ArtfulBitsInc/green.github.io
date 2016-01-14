@@ -1,31 +1,47 @@
 @font-face {
-    font-family:Corbel Regular;
+    font-family: 'Tahoma Bold';
+    src:url('../font/tahomabd.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'Corbel Regular';
     src:url(../font/corbel.ttf);
 }
 
 @font-face {
-    font-family:Corbel Bold;
+    font-family:'Corbel Bold';
     src:url(../font/corbelb.ttf);
 }
 
 @font-face {
-    font-family:Calibri Regular;
+    font-family:'Calibri Regular';
     src:url(../font/calibri.ttf);
 }
 
 @font-face {
-    font-family:Calibri Bold;
+    font-family:'Calibri Bold';
     src:url(../font/calibrib.ttf);
 }
 
 @font-face {
-    font-family:Arial Bold;
+    font-family:'Arial Bold';
     src:url(../font/arialbd.ttf);
 }
 
 @font-face {
-    font-family:Tahoma Bold;
+    font-family:'Tahoma Bold';
     src:url(../font/tahomabd.ttf);
+}
+
+@font-face {
+    font-family: 'Banjoman';
+    src: url('../font/banjomanbd.eot');
+    src: url('../font/banjomanbd.eot?#iefix') format('embedded-opentype'),
+    url('../font/banjomanbd.woff') format('woff'),
+    url('../font/banjomanbd.ttf') format('truetype'),
+    url('../font/banjomanbd.svg#BanjomanBold') format('svg');
+    font-style: normal;
+    font-weight: normal;
 }
 
 body {margin:0;padding:0;}
@@ -49,14 +65,35 @@ header.home {
     background: url(../img/home-background.jpg) center / cover no-repeat;
 }
 
-header.home .logo {
-    font:1.2em Corbel Regular;
+.logo {
+    margin: 0;
+}
+
+header.home .logo .logo-part-large,
+header.home .logo .logo-part-small {
+    font-family: Banjoman;
+    font-weight: normal;
+    color:#fff;
+}
+
+header.home .logo .logo-part-large {
+    font-size: 1em;
+    color:#fff;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+}
+
+header.home .logo .logo-part-small {
+    font-size:0.6em;
     color:#fff;
     margin: 0;
 }
 
 header.home .logo img {
     vertical-align: bottom;
+    margin-right: 5px;
 }
 
 .header-row {
@@ -93,6 +130,10 @@ button[class*=btn-] .icons-sprite {
     background: none;
 }
 
+.home .btn-personal-area:hover {
+    opacity: 0.8;
+}
+
 .btn-personal-area .icons-sprite {
     background-position: 0 -2px;
 }
@@ -118,8 +159,25 @@ button[class*=btn-] .icons-sprite {
     height: 42px;
 }
 
+.home .btn-language:hover {
+    border-color:rgba(255,255,255,0.8);
+    color:rgba(255,255,255,0.8);
+}
+
 .btn-language .icons-sprite {
     background-position: -80px -2px;
+}
+
+.btn-language + .options-list > .option {
+    position: relative;
+}
+
+.btn-language + .options-list > .option > a {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    top:0;
 }
 
 .header-row .options-list {
@@ -132,12 +190,14 @@ button[class*=btn-] .icons-sprite {
 }
 
 .home .title {
-    font:3.5em Arial Bold;
+    font:3.5em Arial;
+    font-weight: bold;
     margin-bottom: 0;
 }
 
 .home .subtitle {
-    font:1.5em "Calibri Regular";
+    font:1.5em "Calibri";
+    font-weight: normal;
     margin-top: 0;
 }
 
@@ -249,7 +309,20 @@ button[class*=btn-] .icons-sprite {
     flex:3;
     -webkit-flex:3;
     background: #fcfcfc;
-    font: 1.2em Corbel Regular;
+    font: 1.2em Corbel;
+    font-weight: normal;
+    position: relative;
+}
+
+.search-line-component a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.search-line-component .tooltip {
+    text-indent: 0;
 }
 
 .search-line-component:first-child {
@@ -280,6 +353,7 @@ button[class*=btn-] .icons-sprite {
     display: inline-block;
     vertical-align: middle;
     float: left;
+    position: relative;
 }
 
 .component-apartment {
@@ -298,12 +372,35 @@ button[class*=btn-] .icons-sprite {
 }
 
 .component-budget .search-par {
-    width: calc(50% - 85px);
+    width: calc(50% - 75px);
+}
+
+.component-budget .component-selected {
+    height: 100%;
+    margin: 0;
+    line-height: 2.4em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 8px);
+    display: inline-block;
+}
+
+.component-budget .options-list {
+    min-width: 120px;
+    height: 300px;
+    overflow-y: scroll;
 }
 
 .search-line-component .icon-budget {
     width: 110px;
     text-indent: 40px;
+}
+
+.component-budget .icon-dropdown {
+    width: 8px;
+    background-position: -176px -40px;
+    float: right;
 }
 
 .dropdown.search-par {
@@ -312,6 +409,7 @@ button[class*=btn-] .icons-sprite {
 
 .component-currency .search-par {
     width: calc(100% - 40px);
+    text-align: right;
 }
 
 .component-currency .search-par,
@@ -416,7 +514,8 @@ button[class*=btn-] .icons-sprite {
 }
 
 .title-standard {
-    font:2em Tahoma Bold;
+    font:2em 'Tahoma';
+    font-weight: bold;
 }
 
 .main-aside .title-standard {
@@ -425,7 +524,8 @@ button[class*=btn-] .icons-sprite {
 }
 
 .text {
-    font-family:"Calibri Regular";
+    font-family:Calibri;
+    font-weight: normal;
 }
 
 .main-aside .text {
@@ -473,7 +573,8 @@ button[class*=btn-] .icons-sprite {
     max-width:420px;
     height:330px;
     background: #fff;
-    font-family: "Calibri Regular";
+    font-family: "Calibri";
+    font-weight: normal;
     display: inline-block;
     text-align: left;
 }
@@ -484,8 +585,7 @@ button[class*=btn-] .icons-sprite {
 
 .photo-area {
     width:100%;
-    height: auto;
-    max-height: 245px;
+    height: 245px;
     overflow: hidden;
 }
 
@@ -575,11 +675,15 @@ button[class*=btn-] .icons-sprite {
     color:#606060;
     text-align: right;
     position: relative;
-    cursor:default;
 }
 
 .item-details ul li:first-child {
     text-align: left;
+    min-width: 70px;
+}
+
+.item-details ul li:nth-child(2) {
+    min-width: 80px;
 }
 
 .item-details .icons-sprite {
@@ -721,12 +825,14 @@ button[class*=btn-] .icons-sprite {
 }
 
 .property .subtitle {
-    font:1.4em "Calibri Regular";
+    font:1.4em "Calibri";
+    font-weight: normal;
     margin:0 0 50px 0;
 }
 
 .property .text,.properties .text {
-    font:1.2em "Corbel Regular";
+    font:1.2em "Corbel";
+    font-weight: normal;
     text-align: justify;
     line-height: 1.7em;
     color:#4e4e4e;
@@ -781,11 +887,18 @@ button[class*=btn-] .icons-sprite {
     list-style: none;
     height: 70px;
     background: #fff;
-    font:1em Corbel Regular;
+    font:1em Corbel;
+    font-weight: normal;
     padding: 0;
     margin: 0;
     z-index: 2;
     border-right:2px solid #eceeec;
+    transition: .15s linear;
+    cursor:pointer;
+}
+
+.prop-tab:hover {
+    background: #eceeec;
 }
 
 .prop-tab:last-child {
@@ -802,7 +915,8 @@ button[class*=btn-] .icons-sprite {
 }
 
 .prop-tab span {
-    font:1.2em Corbel Regular;
+    font:1.2em Corbel;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
@@ -914,7 +1028,8 @@ button[class*=btn-] .icons-sprite {
 }
 
 .commercial .subtitle {
-    font:1.8em Corbel Regular;
+    font:1.8em Corbel;
+    font-weight: normal;
 }
 
 .commercial .text-left .subtitle {
@@ -941,7 +1056,8 @@ button[class*=btn-] .icons-sprite {
     color:#404040;
     background: #fff;
     border-radius: 5px;
-    font:1.3em Corbel Regular;
+    font:1.3em Corbel;
+    font-weight: normal;
 }
 
 .btn-commercial:hover,
@@ -976,7 +1092,8 @@ button[class*=btn-] .icons-sprite {
     flex:1;
     -webkit-flex:1;
     text-align: center;
-    font:1.3em Corbel Regular;
+    font:1.3em Corbel;
+    font-weight: normal;
     text-transform: uppercase;
     color:#86aa22;
     border-right:1px solid #86aa22;
@@ -1023,7 +1140,8 @@ footer ul {
     list-style: none;
     padding: 0;
     display: inline-block;
-    font:1.1em Calibri Regular;
+    font:1.1em Calibri;
+    font-weight: normal;
     color:#fff;
     margin: 0 40px 0 0;
     cursor:pointer;
@@ -1045,7 +1163,8 @@ footer ul {
     color:#90b529;
     text-transform: uppercase;
     background: transparent;
-    font:1.15em Calibri Regular;
+    font:1.15em Calibri;
+    font-weight: normal;
     padding: 0 20px 0 10px;
     border-radius: 3px;
 }
@@ -1064,7 +1183,8 @@ footer ul {
     display: inline-block;
     margin:0 10px 0 0;
     color:#fff;
-    font:1.2em Calibri Regular;
+    font:1.2em Calibri;
+    font-weight: normal;
     vertical-align: middle;
 }
 
@@ -1106,7 +1226,8 @@ footer ul {
 }
 
 .powered {
-    font:1em Calibri Regular;
+    font:1em Calibri;
+    font-weight: normal;
     color:#969696;
 }
 
@@ -1123,8 +1244,8 @@ header.other-pages {
     height: auto;
     border-bottom: 1px solid #eae8e8;;
 }
-
-header.other-pages .logo {
+header.other-pages .logo .logo-part-small,
+header.other-pages .logo .logo-part-large {
     color:#86aa22;
 }
 
@@ -1134,6 +1255,12 @@ header.other-pages .logo {
 
 .other-pages .btn-language {
     border-color: #86aa22;
+}
+
+.other-pages .btn-language:hover {
+    opacity: 0.8;
+    border-color: #86aa22;
+    color:#86aa22;
 }
 
 .other-pages .btn-personal-area .icons-sprite {
@@ -1191,11 +1318,55 @@ header.other-pages .logo {
     border:none;
     outline:none;
     color:#86aa22;
-    font:1.5em Corbel Regular;
-    width: calc(100% - 45px);
+    font:1.5em Corbel;
+    font-weight: normal;
+    width: calc(100% - 148px);
     margin: 0;
     padding: 0;
     background: transparent;
+}
+
+.search-input .btn-search {
+    float: right;
+    width: 100px;
+    color: #fff;
+    font-size: 1em;
+    height: 35px;
+    margin-top: 2px;
+}
+
+.ui-autocomplete {
+    font:1.1em Corbel;
+    box-shadow: 0 1px 6px 2px rgba(0,0,0,0.2);
+    border:none;
+}
+
+.ui-autocomplete .ui-menu-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#4e4e4e;
+    border-bottom: 1px solid #eae8e8;
+}
+
+.ui-autocomplete .ui-menu-item:nth-child(odd) {
+    background: #f3f3f3;
+}
+
+.ui-autocomplete .ui-menu-item:nth-child(even) {
+    background: #fff;
+}
+
+.ui-autocomplete .ui-state-focus {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin: 0;
+}
+
+.ui-autocomplete .ui-menu-item:hover {
+    background: #eae8e8;
 }
 
 /***********************************
@@ -1235,7 +1406,8 @@ header.other-pages .logo {
 
 .filters-title {
     color:#fcfcfc;
-    font:1.6em Corbel Regular;
+    font:1.6em Corbel;
+    font-weight: normal;
     margin-top: 30px;
 }
 
@@ -1285,7 +1457,8 @@ header.other-pages .logo {
 }
 
 .filter-name {
-    font:1.2em Corbel Regular;
+    font:1.2em Corbel;
+    font-weight: normal;
 }
 
 .filter-name,
@@ -1295,18 +1468,22 @@ header.other-pages .logo {
 
 .label-for-minmax {
     padding-left: 5px;
-    font: 1.2em Calibri Regular;
+    font: 1.2em Calibri;
+    font-weight: normal;
     line-height: 1.7em;
+    width: 40px;
 }
 
 .min,.max {
     text-align: right;
-    flex: 1;
-    -webkit-flex: 1;
+    /*flex: 1;*/
+    /*-webkit-flex: 1;*/
     padding:0 5px;
-    font:1.3em Calibri Regular;
-    width: 40%;
-    max-width: 114px;
+    font:1.3em Calibri;
+    font-weight: normal;
+    /*width: 40%;*/
+    width: calc(50% - 30px);
+    max-width: 111px;
 }
 
 .range-inputs .label-for-minmax:nth-child(3) {
@@ -1325,7 +1502,8 @@ header.other-pages .logo {
 .min-max-values-info {
     display: flex;
     display: -webkit-flex;
-    font:1em Calibri Regular;
+    font:1em Calibri;
+    font-weight: normal;
 }
 
 .min-value-info,
@@ -1367,11 +1545,17 @@ header.other-pages .logo {
     width: 30px;
     height:2px;
     background: #80a026;
+    transition: .15s linear;
 }
 
 .btn-filter:after {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
+}
+
+.btn-filter-close:after {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
 }
 
 /*************** Range **************/
@@ -1433,6 +1617,108 @@ header.other-pages .logo {
     top: -8px;
 }
 
+/********* More filters *********/
+
+.more-filters {
+    height: 80px;
+    background: #86aa22;
+    border-top: 1px solid #80a026;
+    display: none;
+}
+
+.more-filters .filters-content {
+    height:79px;
+    padding: 23px 10px 0 0;
+}
+
+.filter-properties-area {
+    width: calc(100% - 137px);
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+}
+
+.filter-properties-list {
+    position: absolute;
+    background: #fff;
+    z-index: 10;
+    box-shadow: 0 1px 6px 2px rgba(0,0,0,0.2);
+    width: 100%;
+    top: 30px;
+    display: none;
+}
+
+.filter-properties-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-properties-list input[type=checkbox] {
+    display: none;
+}
+
+.filter-properties-list label {
+    transition: .15s linear;
+    width: 100%;
+    padding:10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eae8e8;
+    margin: 0;
+}
+
+.filter-properties-list label:hover {
+    background: #f3f3f3;
+}
+
+.filter-property-type {
+    height: 30px;
+    width: 100%;
+    background: #fcfcfc;
+    color: #86aa22;
+    font: 1.3em Calibri;
+    font-weight: normal;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.more-filters .more-checkbox {
+    padding: 26px 0px 0px 10px;
+    border-right: none;
+}
+
+.more-filters .more-checkbox .checkbox-group {
+    flex:none;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.more-filters .more-checkbox .form-text {
+    color:#fff;
+    font: 1.3em Calibri;
+    margin-left: 10px;
+}
+
+.more-checkbox .custom-checkbox {
+    margin-bottom: 2px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #FFFFFF;
+}
+
+.more-checkbox .custom-checkbox:after,
+.more-checkbox .custom-checkbox:before {
+    background: #86aa22;
+}
+
+.more-checkbox input[type=checkbox]:checked + .custom-checkbox:after,
+.more-checkbox input[type=checkbox]:checked +.custom-checkbox:before {
+    background: #fff;
+}
+
 /***********************************
         Info row
 ************************************/
@@ -1442,6 +1728,7 @@ header.other-pages .logo {
 }
 
 .info-row .info-alert {
+    display: flex;
     display: -webkit-flex;
     height: 50px;
     margin-top: 15px;
@@ -1459,7 +1746,8 @@ header.other-pages .logo {
     height: 35px;
     background: #c60a19;
     color:#fff;
-    font:1.3em Calibri Regular;
+    font:1.3em Calibri;
+    font-weight: normal;
     max-width: 235px;
     padding-left: 15px;
     border-radius: 3px;
@@ -1471,14 +1759,16 @@ header.other-pages .logo {
 
 .alert-title {
     color:#7c7c7c;
-    font:1.8em Calibri Regular;
+    font:1.8em Calibri;
+    font-weight: normal;
     margin: 0 0 0 10px;
 }
 
 /******* Sorting by ********/
 
 .sorting-by {
-    font:1em "Calibri Regular";
+    font:1em "Calibri";
+    font-weight: normal;
     color:#a3a3a3;
     max-width: 220px;
     text-align: right;
@@ -1566,7 +1856,8 @@ header.other-pages .logo {
 .items-grid .item-main {
     flex:1;
     -webkit-flex:1;
-    margin: 15px auto;
+    margin: 15px 25px;
+    transition: .15s linear;
 }
 
 .items-grid .item-main:nth-child(3n+1) {
@@ -1589,13 +1880,30 @@ header.other-pages .logo {
     background-position: -160px -279px;
 }
 
-.add-position {
+.item-show-info {
     margin-right: 10px;
     cursor:pointer;
+    width: 20px;
+    display: inline-block;
 }
 
 .items-grid .item-location {
     margin-left: 30px;
+}
+
+.item-open {
+    height: 380px;
+}
+
+.item-more-info {
+    line-height: 1.2em;
+    margin-left: 30px;
+    margin-top: -5px;
+    text-align: justify;
+    height: 50px;
+    margin-bottom: 5px;
+    display: none;
+    overflow: hidden;
 }
 
 /************* Paginator *************/
@@ -1605,7 +1913,8 @@ header.other-pages .logo {
 }
 
 .pagination-info {
-    font:1.3em Calibri Regular;
+    font:1.3em Calibri;
+    font-weight: normal;
     color:#5b5e5e;
     margin-bottom: 0;
 }
@@ -1646,7 +1955,8 @@ header.other-pages .logo {
 /*************** Breadcrumbs area ***************/
 
 .breadcrumbs-area {
-    font:1.2em Calibri Regular;
+    font:1.2em Calibri;
+    font-weight: normal;
     color:#5b5e5e;
     border-top:1px solid #c4c7c5;
     display: flex;
@@ -1725,7 +2035,8 @@ footer.other-footer div.powered {
 
 .seller-name {
     color:#5b5e5e;
-    font:1.2em Corbel Regular;
+    font:1.2em Corbel;
+    font-weight: normal;
     text-align: center;
     margin-top: 10px;
 }
@@ -1736,7 +2047,8 @@ footer.other-footer div.powered {
 }
 
 .item-info .item-title {
-    font:1.9em Calibri Regular;
+    font:1.9em Calibri;
+    font-weight: normal;
     text-transform: uppercase;
     margin-top: 0;
     text-overflow: inherit;
@@ -1778,7 +2090,8 @@ footer.other-footer div.powered {
 .item-info .item-details ul li {
     text-align: center;
     color:#b1b0b0;
-    font:1.2em Calibri Regular;
+    font:1.2em Calibri;
+    font-weight: normal;
     border-right: 1px solid #e8e8e8;
 }
 
@@ -1787,7 +2100,8 @@ footer.other-footer div.powered {
 }
 
 .item-info .details-name {
-    font:0.9em Corbel Regular;
+    font:0.9em Corbel;
+    font-weight: normal;
     color:#616161;
     margin-bottom: 0;
 }
@@ -1825,7 +2139,8 @@ footer.other-footer div.powered {
 .form-price {
     background: #86aa22;
     color: #fff;
-    font: 2.4em Calibri Regular;
+    font: 2.4em Calibri;
+    font-weight: normal;
     height: 50px;
     line-height: 1.5em;
     margin: 0;
@@ -1849,11 +2164,13 @@ footer.other-footer div.powered {
 
 .form-reference {
     color:#86aa22;
-    font:1.2em Calibri Regular;
+    font:1.2em Calibri;
+    font-weight: normal;
 }
 
 .form-text {
-    font: 1.1em Corbel Regular;
+    font: 1.1em Corbel;
+    font-weight: normal;
     color:#5b5e5e;
 }
 
@@ -1864,7 +2181,8 @@ footer.other-footer div.powered {
 }
 
 .standard-input {
-    font:1.1em Calibri Regular;
+    font:1.1em Calibri;
+    font-weight: normal;
     color:#949494;
     height: 40px;
     padding: 0 10px;
@@ -1899,7 +2217,8 @@ footer.other-footer div.powered {
 }
 
 .group-part label {
-    font:1em Corbel Regular;
+    font:1em Corbel;
+    font-weight: normal;
 }
 
 .custom-checkbox {
@@ -1954,7 +2273,8 @@ input[type=checkbox]:checked +.custom-checkbox:before {
     width: 100%;
     background: #c60a19;
     color:#fff;
-    font:1.3em Calibri Bold;
+    font:1.3em Calibri;
+    font-weight: bold;
     height: 40px;
 }
 
@@ -1971,12 +2291,14 @@ input[type=checkbox]:checked +.custom-checkbox:before {
 
 .item-content .title-standard,
 .similar .title-standard {
-    font: 2em Calibri Bold;
+    font: 2em Calibri;
+    font-weight: bold;
     margin: 45px 0 30px 0;
 }
 
 .item-content .text {
-    font:1.1em "Corbel Regular";
+    font:1.1em "Corbel";
+    font-weight: normal;
     line-height: 1.5em;
     text-align: justify;
 }
@@ -2008,7 +2330,8 @@ input[type=checkbox]:checked +.custom-checkbox:before {
     -webkit-flex:1;
     text-align: left;
     list-style: none;
-    font:1.1em Calibri Regular;
+    font:1.1em Calibri;
+    font-weight: normal;
     line-height: 1.5em;
     margin-right: 30px;
 }
@@ -2068,7 +2391,8 @@ input[type=checkbox]:checked +.custom-checkbox:before {
 .item-ecology .text {
     color:#808080;
     margin-top: 20px;
-    font:1.1em Calibri Regular;
+    font:1.1em Calibri;
+    font-weight: normal;
 }
 
 .item-ecology .img-descr {
@@ -2142,7 +2466,8 @@ input[type=checkbox]:checked +.custom-checkbox:before {
 
 .more-photos {
     float: right;
-    font: 0.6em Calibri Regular;
+    font: 0.6em Calibri;
+    font-weight: normal;
     text-decoration: underline;
     cursor: pointer;
     margin-top: 10px;
@@ -2152,11 +2477,13 @@ input[type=checkbox]:checked +.custom-checkbox:before {
 
 .title-standard > .price {
     color:#a7c061;
-    font-family: Calibri Regular;
+    font-family: Calibri;
+    font-weight: normal;
 }
 
 .item-content-part .price-text {
-    font:1.1em Calibri Regular;
+    font:1.1em Calibri;
+    font-weight: normal;
     margin: 0;
 }
 
@@ -2224,4 +2551,33 @@ input[type=checkbox]:checked +.custom-checkbox:before {
     .items-grid .item-main {
         margin: 15px;
     }
+
+    .photo-area img {
+        height: 100%;
+    }
+
+    .search-line-component .icon-budget {
+        width: 40px;
+    }
+
+    .component-budget .search-par {
+        width: calc(50% - 40px);
+    }
+
+}
+
+@media (max-width:1140px) {
+
+    .float-form {
+        margin: -76px 0 0 0px;
+    }
+
+    .label-for-minmax {
+        width: 0;
+    }
+
+    .min, .max {
+        width: calc(50% - 10px);
+    }
+
 }
